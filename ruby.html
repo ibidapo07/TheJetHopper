@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="big-container">
+        <h3>Mouse Coordinates : <span id="cord"> </span></h3>
+        <div id="ruby-little-container">
+            
+        </div>
+    </div>
+    <script>
+        document.onmousemove = (event) => {
+            const {  
+    clientX,  
+    clientY  
+  } = event
+//   let screenH = window.screen.availHeight
+//   let screenW = window.screen.availWidth
+
+  let k = document.getElementById("cord")
+  let h = document.getElementById("ruby-little-container")
+  h.style.height, h.style.width =`${10+(clientX/5)}px`
+  h.style.left = `${clientX-(h.style.height/2)}px`
+  h.style.top = `${clientY}px`
+  k.innerHTML = `(${clientX},${clientY})`
+        }
+        // console.log(window.screen.availHeight,window.screen.availWidth)
+        
+    </script>
+</body>
+</html>
